@@ -21,8 +21,8 @@ DEBUG=mercadolibre-challenge:* npm start
 
 ## Tests
 
-After installing all the needed dependencies, you can run the API using this command
+For running the test suite, execute this command
 
 ```bash
-DEBUG=mercadolibre-challenge:* npm start
+npm run test
 ```
