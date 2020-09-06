@@ -8,6 +8,7 @@ const app = require('../app');
 const debug = require('debug')('mercadolibre-challenge:server');
 const http = require('http');
 const mongoose = require('mongoose');
+const config = require('../config/config.json');
 
 /**
  * Get port from environment and store in Express.
@@ -85,7 +86,7 @@ function onError(error) {
 function onListening() {
 
   //static connection's string because there are not multiple environments
-  mongoose.connect('mongodb+srv://challengeMeLi:XgGpKPbY5cUaA2Z@cluster0.gvzpd.mongodb.net/challengeMeLi?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+  mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true});
   const db = mongoose.connection; 
 
   //Handling error of connection

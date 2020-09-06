@@ -1,5 +1,6 @@
 const Mutant = require('../utils/mutant');
 const mongoose = require('mongoose');
+const config = require('./config/config.json');
 
 const noMutantDNA = [
     ['A', 'T', 'G', 'C', 'A', 'A'],
@@ -21,7 +22,7 @@ const MutantDNA = [
 
 beforeAll(async () => {
     //static connection's string because there are not multiple environments
-    await mongoose.connect('mongodb+srv://challengeMeLi:XgGpKPbY5cUaA2Z@cluster0.gvzpd.mongodb.net/challengeMeLi?retryWrites=true&w=majority', {
+    await mongoose.connect(config.db, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
