@@ -14,7 +14,7 @@ router.post('/', async function(req, res, next) {
         elements += element.length;
         return element.split('')
       });
-      if(elements = 36) {
+      if(elements === 36) {
         if(await isMutant(splittedDNA)) {
           res.send('OK');
         } else {
