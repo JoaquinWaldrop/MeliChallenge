@@ -11,7 +11,7 @@ router.post('/', async function(req, res, next) {
     if (dna && Array.isArray(dna) && dna.length === 6) {
       const elements = 0;
       const splittedDNA = dna.map((element) => {
-        elements += element.length();
+        elements += element.length;
         return element.split('')
       });
       if(elements = 36) {
