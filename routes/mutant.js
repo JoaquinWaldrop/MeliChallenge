@@ -10,7 +10,6 @@ router.post('/', async function(req, res, next) {
   try {
     if (dna && Array.isArray(dna)) {
       const splittedDNA = dna.map((element) => element.split(''));
-      console.log(splittedDNA);
       if(await isMutant(splittedDNA)) {
         res.send('OK');
       } else {

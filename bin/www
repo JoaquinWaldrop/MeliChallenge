@@ -85,7 +85,6 @@ function onError(error) {
 
 function onListening() {
 
-  //static connection's string because there are not multiple environments
   mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true});
   const db = mongoose.connection; 
 
