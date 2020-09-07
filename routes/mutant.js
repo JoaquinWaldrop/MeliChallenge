@@ -8,12 +8,20 @@ router.post('/', async function(req, res, next) {
   const dna = req.body && req.body.dna;
   
   try {
-    if (dna && Array.isArray(dna)) {
-      const splittedDNA = dna.map((element) => element.split(''));
-      if(await isMutant(splittedDNA)) {
-        res.send('OK');
+    if (dna && Array.isArray(dna) && dna.length === 6) {
+      const elements = 0;
+      const splittedDNA = dna.map((element) => {
+        elements += element.length();
+        return element.split('')
+      });
+      if(elements = 36) {
+        if(await isMutant(splittedDNA)) {
+          res.send('OK');
+        } else {
+          res.sendStatus(403);
+        }
       } else {
-        res.sendStatus(403);
+        res.status(400).send('Invalid body');
       }
     } else {
       res.status(400).send('Invalid body');

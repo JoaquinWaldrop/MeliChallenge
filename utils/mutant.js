@@ -33,7 +33,7 @@ const Mutant = {
     validatePosition: (splittedDNA, x, y) => {
         const arrayLength = splittedDNA.length;
         let horizontal = true, vertical = true, diagonalLeft = true, diagonalRight = true;
-        //generates an array of 4 characters in all direction to validate if all of them are equal
+        //generates an array of 4 characters in all direction to validate if all characters are equal
         for (let i = 1; i <= 3; i++) {
             //validates horizontal
             if( y < arrayLength - 3 ) {
@@ -60,7 +60,7 @@ const Mutant = {
                 diagonalLeft = false;
             }
             
-            //Validate if all directions are wrong and stop validating
+            //Validate if all directions are wrong then stops the validation
             if(!horizontal && !vertical && !diagonalRight && !diagonalLeft) {
                break; 
             }
